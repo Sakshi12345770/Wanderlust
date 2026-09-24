@@ -5,8 +5,7 @@ const initData = require("./data.js");
 const Listing = require("../models/listing.js");
 const mbxGeocoding = require("@mapbox/mapbox-sdk/services/geocoding");
 
-const MONGO_URL = "mongodb://127.0.0.1:27017/wanderlust";
-
+const MONGO_URL = process.env.ATLASDB_URL;
 const mapToken = process.env.MAP_TOKEN;
 
 if (!mapToken) {
@@ -57,7 +56,7 @@ const initDB = async () => {
 
     listings.push({
       ...obj,
-      owner: "6aa94b13799957019fad850c",
+      owner: "6ab2a94e046262ab12dc8f55",
       geometry: geometry,
     });
 
